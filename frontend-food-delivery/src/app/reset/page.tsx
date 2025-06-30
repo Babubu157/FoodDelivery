@@ -79,10 +79,13 @@ const PassResetPage = () => {
     validationSchema: validationSchemaLogin,
     onSubmit: async (values) => {
       try {
-        const response = await axios.put("http://localhost:8000/updatePass", {
-          email: values.email,
-          password: values.password,
-        });
+        const response = await axios.put(
+          "https://fooddeliverybe.onrender.com/updatePass",
+          {
+            email: values.email,
+            password: values.password,
+          }
+        );
         console.log("Password updated", response);
         router.push("/login");
       } catch (err: any) {

@@ -35,11 +35,14 @@ export const ConfirmOTP = ({
 
   const verifyHandler = async (valuesOtp: string) => {
     try {
-      const response = await axios.post("http://localhost:8000/verifyOtp", {
-        // otp: values.otp,
-        otp: valuesOtp,
-        email: values.email,
-      });
+      const response = await axios.post(
+        "https://fooddeliverybe.onrender.com/verifyOtp",
+        {
+          // otp: values.otp,
+          otp: valuesOtp,
+          email: values.email,
+        }
+      );
       // console.log("code matched", response);
       handleNextStep();
     } catch (error: any) {
@@ -50,9 +53,12 @@ export const ConfirmOTP = ({
 
   const resendHandler = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/sendOtp", {
-        email: values.email,
-      });
+      const response = await axios.post(
+        "https://fooddeliverybe.onrender.com/sendOtp",
+        {
+          email: values.email,
+        }
+      );
       console.log("email sent OK", response);
     } catch (err: any) {
       alert(err?.response?.data?.message || "failed to resend code ");

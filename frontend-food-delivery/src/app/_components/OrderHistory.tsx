@@ -36,9 +36,12 @@ export const OrderHistory = () => {
   const getOrderHistory = async () => {
     setLoading(true);
     const token = window.localStorage.getItem("token");
-    const response = await axios.get("http://localhost:8000/orders", {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = await axios.get(
+      "https://fooddeliverybe.onrender.com/orders",
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     setOrders(response?.data?.orders);
     setLoading(false);
   };

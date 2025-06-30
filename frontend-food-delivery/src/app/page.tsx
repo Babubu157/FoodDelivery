@@ -3,7 +3,7 @@ import axios from "axios";
 import { HomePage } from "./_components/HomePage";
 
 export default async function Home() {
-  const { data } = await axios.get("http://localhost:8000/foods");
+  const { data } = await axios.get("https://fooddeliverybe.onrender.com/foods");
   console.log("hello");
   return (
     <div className="w-full flex flex-col gap">

@@ -25,7 +25,7 @@ const AdminHomePage = () => {
       const token = window?.localStorage?.getItem("token");
 
       const response: any = await axios.get(
-        "http://localhost:8000/admin/getAllOrders",
+        "https://fooddeliverybe.onrender.com/admin/getAllOrders",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -77,7 +77,7 @@ const AdminHomePage = () => {
     console.log(prepare);
 
     await axios.put(
-      "http://localhost:8000/admin/update",
+      "https://fooddeliverybe.onrender.com/admin/update",
       {
         orders: prepare,
       },

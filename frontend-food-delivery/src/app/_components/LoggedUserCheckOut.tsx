@@ -35,7 +35,7 @@ export const LoggedUserCheckOut = ({ grandTotal }: PropsType) => {
     }));
 
     await axios.post(
-      "http://localhost:8000/createOrder",
+      "https://fooddeliverybe.onrender.com/createOrder",
       {
         totalPrice: grandTotal,
         address: deliveryAddress,
